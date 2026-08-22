@@ -1,8 +1,9 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
 
-# Se o arquivo ou pasta existir de verdade (como seu CSS), abre ele direto
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# Se não existir, manda a URL de forma limpa para o index.php
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+    # Se a requisição não for para um arquivo físico (como uma imagem ou o próprio style.css)
+    # nem para uma pasta real, joga o texto da URL para o index.php na variável $_GET['url']
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>

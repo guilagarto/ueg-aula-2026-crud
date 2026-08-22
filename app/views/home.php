@@ -7,7 +7,7 @@ require_once __DIR__ . '/components/header.php';
 <main class="container">
     <section class="hero-section">
         <h1>🏠 Bem-vindo à Página Inicial</h1>
-        <p>Este é o modelo estruturado do seu novo site rodando no XAMPP de forma moderna.</p>
+        <p>Visão geral: nível, xp. progresso,proximas atividades, resumo da jornada</p>
     </section>
 
     <section class="features">
@@ -17,7 +17,7 @@ require_once __DIR__ . '/components/header.php';
         </div>
         
         <div class="card">
-            <h3>Guilherme VInicius LIma/h3>
+            <h3>Guilherme VInicius LIma</h3>
             <p>Projeto </p>
         </div>
     </section>
