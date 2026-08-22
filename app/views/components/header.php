@@ -79,13 +79,29 @@
     <header class="global-header">
         <nav class="nav-container">
             <a href="/proj-ueg-aula/public/home" class="logo-text">⚡ 8ou80 Jornada</a>
-            <div class="nav-menu">
-                <a href="/proj-ueg-aula/public/home" class="nav-link">Início</a>
-                <a href="/proj-ueg-aula/public/agenda" class="nav-link">Agenda</a>
-                <a href="/proj-ueg-aula/public/minha-jornada" class="nav-link">Jornada</a>
-                <a href="/proj-ueg-aula/public/certificados" class="nav-link">Certificados</a>
-                <a href="/proj-ueg-aula/public/conquistas" class="nav-link">Conquistas</a>
-                <a href="/proj-ueg-aula/public/perfil" class="nav-link btn-perfil">Meu Perfil</a>
-            </div>
+            <!-- Substitua o bloco da nav-menu dentro do seu header.php por este -->
+            <?php
+// Detecta se o site está rodando localmente no XAMPP
+$isLocal = ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1');
+
+// Se for local, inclui a pasta do projeto. Se for na Hostinger, usa apenas a barra inicial
+$base_path = $isLocal ? '/proj-ueg-aula/public' : '';
+?>
+
+<header class="global-header">
+    <nav class="nav-container">
+        <a href="<?= $base_path ?>/home" class="logo-text">⚡ 8ou80 Jornada</a>
+        <div class="nav-menu">
+            <a href="<?= $base_path ?>/home" class="nav-link">Início</a>
+            <a href="<?= $base_path ?>/agenda" class="nav-link">Agenda</a>
+            <a href="<?= $base_path ?>/minha-jornada" class="nav-link">Jornada</a>
+            <a href="<?= $base_path ?>/certificados" class="nav-link">Certificados</a>
+            <a href="<?= $base_path ?>/conquistas" class="nav-link">Conquistas</a>
+            <a href="<?= $base_path ?>/perfil" class="nav-link btn-perfil">Meu Perfil</a>
+        </div>
+    </nav>
+</header>
+
+
         </nav>
     </header>

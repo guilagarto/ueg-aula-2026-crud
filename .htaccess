@@ -1,10 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # Redireciona a raiz para a pasta public
+    # Redireciona a chamada da raiz para a pasta public
     RewriteRule ^$ public/index.php [L]
     
-    # Se não for um arquivo ou pasta real, joga o fluxo para dentro de public
+    # Processa as URLs amigáveis passando o texto para a public de forma transparente
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
